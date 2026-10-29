@@ -33,6 +33,9 @@ Usage:
                      which on the disc would override the packed one.
     --names=<file>   candidate paths, one per line. Defaults to
                      rsdkv4_filelist.txt beside this script.
+    --reference-layout
+                     also extract named stage WAVs to reproduce Sonic1test29.cdi;
+                     GameConfig.bin is still kept inside the pack.
 """
 import hashlib, os, struct, sys
 
@@ -232,11 +235,14 @@ def main(argv):
         say("-- no names file; music cannot be found without one")
 
     keep_all = "--all" in flags
+    reference_layout = "--reference-layout" in flags
     LOOSE = ("Data/Music/", "Data/SoundFX/Global/",
              "Data/Game/Menu/", "Data/Game/Models/")
     def wanted_here(path):
         if keep_all:
             return path.startswith("Data/")
+        if reference_layout and path.startswith("Data/SoundFX/Stage/"):
+            return True
         # Data/Game/ is deliberately NOT a prefix here: it would pull
         # GameConfig.bin out too, and a loose copy of that beside Data.rsdk
         # overrides the packed one.

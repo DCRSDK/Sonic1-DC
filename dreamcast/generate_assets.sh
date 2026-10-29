@@ -75,7 +75,7 @@ IFS=$'\n\t'
 
 die() { printf 'error: %s\n' "$*" >&2; exit 1; }
 usage() {
-  printf 'Usage: %s <path/to/Data.rsdk> [stage_dir] [--menu-no-vq] [--skip-menu]\n' \
+  printf 'Usage: %s <path/to/Data.rsdk> [stage_dir] [--menu-no-vq] [--skip-menu] [--reference-layout]\n' \
     "${0##*/}" >&2
   exit 2
 }
@@ -84,11 +84,13 @@ src_in=""
 stage_arg=""
 menu_vq=1
 skip_menu=0
+reference_layout=0
 
 for arg in "$@"; do
   case "$arg" in
     --menu-no-vq) menu_vq=0 ;;
     --skip-menu)  skip_menu=1 ;;
+    --reference-layout) reference_layout=1 ;;
     -*)           usage ;;
     *)            if   [[ -z "$src_in"   ]]; then src_in=$arg
                   elif [[ -z "$stage_arg" ]]; then stage_arg=$arg
@@ -98,6 +100,9 @@ done
 
 [[ -n "$src_in" ]] || usage
 [[ -e "$src_in" ]] || die "no such file or directory: $src_in"
+if (( reference_layout && skip_menu )); then
+  die "--reference-layout requires menu textures (remove --skip-menu)"
+fi
 
 for tool in ffmpeg ffprobe; do
   command -v "$tool" >/dev/null 2>&1 || die "$tool not found in PATH"
@@ -136,7 +141,9 @@ if [[ -n "$pack" ]]; then
   work=$(mktemp -d)
   printf -- '-- extracting from %s\n' "$pack"
   # -I so the extractor cannot pick up a stray module from the data directory.
-  python3 -I "$script_dir/rsdkv4_extract.py" "$pack" "$work/extracted"
+  extract_args=()
+  (( reference_layout )) && extract_args+=(--reference-layout)
+  python3 -I "$script_dir/rsdkv4_extract.py" "$pack" "$work/extracted" "${extract_args[@]}"
   src=$work/extracted
 else
   printf -- '-- using pre-extracted tree %s\n' "$loose"
@@ -181,6 +188,10 @@ printf -- '-- converting music\n'
 printf -- '-- converting global sound effects\n'
 "$script_dir/sfx_step_1_global_to_raw.sh"   "$stage/Data"
 
+if (( reference_layout )); then
+  python3 "$script_dir/reference_assets.py" stage-sfx "$src" "$stage/Data"
+fi
+
 if (( skip_menu )); then
   printf -- '-- 2013 menu textures skipped\n'
 elif [[ ! -d "$stage/Data/Game/Menu" ]]; then
@@ -198,6 +209,9 @@ fi
 # rate * channels * source duration -- so verify before the temp dir goes.
 printf -- '-- verifying\n'
 "$script_dir/verify_assets.sh"              "$stage/Data" "$src"
+if (( reference_layout )); then
+  python3 "$script_dir/reference_assets.py" check "$stage/Data"
+fi
 
 printf -- '-- DONE: %s/Data\n' "$stage"
 if [[ -n "$pack" ]]; then

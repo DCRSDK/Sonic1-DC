@@ -137,11 +137,11 @@ fi
 # disc space to spend and a stray folder is not a failure.
 if [[ -d "$stage/SoundFX/Stage" ]]; then
   n=$(find "$stage/SoundFX/Stage" -type f | wc -l)
-  kb=$(find "$stage/SoundFX/Stage" -type f -printf '%s\n' 2>/dev/null | paste -sd+ - | bc)
+  kb=$(find "$stage/SoundFX/Stage" -type f -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {print s+0}')
   kb=$(( ${kb:-0} / 1024 ))
-  printf 'warn: Data/SoundFX/Stage/ exists (%d files, %d KB) but NOTHING READS IT.\n' "$n" "$kb"
+  printf 'note: Data/SoundFX/Stage/ exists (%d files, %d KB) for reference-disc parity.\n' "$n" "$kb"
   printf '      Stage sfx load from Data.rsdk into AICA sound RAM; the loose path\n'
-  printf '      is global-only. Safe to delete -- it is dead weight on the disc.\n'
+  printf '      is global-only. Keep these files when using --reference-layout.\n'
 fi
 
 # ---- summary ---------------------------------------------------------------
@@ -149,7 +149,7 @@ for sub in Music SoundFX/Global Game/Menu Game/Models; do
   [[ -d "$stage/$sub" ]] || continue
   printf '%-16s %4d files, %8d KB\n' "$sub" \
     "$(find "$stage/$sub" -type f | wc -l)" \
-    "$(( $(find "$stage/$sub" -type f -printf '%s+' 2>/dev/null | sed 's/+$//' | paste -sd+ - | bc) / 1024 ))"
+    "$(( $(find "$stage/$sub" -type f -printf '%s\n' 2>/dev/null | awk '{s+=$1} END {print s+0}') / 1024 ))"
 done
 
 [[ $fail -eq 0 ]] && printf 'verify: OK\n' || { printf 'verify: FAILED\n'; exit 1; }

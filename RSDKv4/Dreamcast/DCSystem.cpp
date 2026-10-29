@@ -10,6 +10,14 @@
 
 #include "DCCommon.hpp"
 
+// GCC's prebuilt runtime may still call the external mutex_lock symbol.
+// Newer KOS headers inline it, leaving libgcc's weak failure stub to satisfy
+// those calls. Route them to the current KOS implementation instead.
+extern "C" int __wrap_mutex_lock(mutex_t *mutex)
+{
+    return mutex_lock_timed(mutex, 0);
+}
+
 unsigned long long DC_GetTicksPerSecond() { return 1000000000ULL; }
 
 unsigned long long DC_GetTicks() { return timer_ns_gettime64(); }

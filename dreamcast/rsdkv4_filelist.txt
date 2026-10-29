@@ -281,10 +281,10 @@ Data/Game/Models/Package_US.png
 # Present in the retail pack but referenced by NOTHING in the engine, so the
 # Dreamcast never opens them. They are in the currently shipped Data/Game/Menu
 # only because the whole extracted folder was converted by hand; at 1024x1024
-# VQ that is ~1.5 MB of dead disc space. Uncomment to match that disc exactly.
-#Data/Game/Menu/Amazon.png
-#Data/Game/Menu/Sonic.png
-#Data/Game/Menu/Heading_JA.png
-#Data/Game/Menu/Label_JA.png
-#Data/Game/Menu/Text_JA.png
-#Data/Game/Menu/Text_KO@1x.png
+# VQ that is ~1.5 MB of extra disc space. Included to match the reference CDI.
+Data/Game/Menu/Amazon.png
+Data/Game/Menu/Sonic.png
+Data/Game/Menu/Heading_JA.png
+Data/Game/Menu/Label_JA.png
+Data/Game/Menu/Text_JA.png
+Data/Game/Menu/Text_KO@1x.png

@@ -91,6 +91,10 @@ endif()
 # find_path blocks and -ltremor -logg have to come back with it.
 target_link_libraries(RetroEngine -lm)
 
+# Bridge prebuilt GCC runtime calls to mutex_lock on KOS versions where
+# that API is now inline (otherwise libgcc's weak failure stub is used).
+target_link_libraries(RetroEngine "-Wl,--wrap=mutex_lock")
+
 # NOTE: -ffunction-sections/-fdata-sections + --gc-sections are
 # deliberately NOT used: with KOS's linker script, section GC can discard
 # .init_array (static constructors) and other KEEP-worthy data, producing

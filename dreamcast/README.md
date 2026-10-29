@@ -6,6 +6,29 @@ copying anything across.
 
 ## Usage
 
+To reproduce the complete loose-file list from the known-good
+`Sonic1test29.cdi`, use:
+
+```sh
+./generate_assets.sh /path/to/Data.rsdk ../build-dc --reference-layout
+```
+
+The reference has **149 files**: 26 music tracks, 40 global sounds,
+51 menu textures, 3 model textures, and 29 stage WAVs. The six additional
+menu textures are now included in the default extraction list too; default
+output without `--reference-layout` has 120 files for this Sonic 1 pack.
+The stage WAVs are retained only for disc parity: the current engine loads
+stage sounds from the pack. Their per-file sample rates (22050 or 11025 Hz),
+mono channels and unsigned 8-bit WAV encoding come from the reference image.
+Global sounds remain headerless signed 8-bit PCM at 22050 Hz.
+
+`reference-assets.json` records the reference paths, hashes and stage audio
+metadata without embedding game content. `reference_assets.py check Data`
+fails on missing or extra paths; fresh encodes are not required to match the
+reference hashes because encoder versions may produce different bytes.
+The pipeline invokes this check automatically with `--reference-layout`.
+Neither mode extracts a loose `GameConfig.bin`.
+
 ```sh
 ./generate_assets.sh /path/to/Data.rsdk [stage_dir] [--menu-no-vq] [--skip-menu]
 ```
@@ -85,8 +108,8 @@ JA/KO/ZH languages only ever load their `@1x` variants, and `Amazon`/`Sonic`
 are not referenced at all. They are in the currently shipped
 `build-dc/Data/Game/Menu` only because the whole extracted folder was converted
 by hand; at 1024×1024 VQ that is ~1.5 MB of disc the console never reads. They
-are listed, commented out, at the end of `rsdkv4_filelist.txt` if you want the
-disc to match byte for byte anyway.
+are included at the end of `rsdkv4_filelist.txt` to reproduce the reference
+disc's complete texture list.
 
 ## Differences from the Sonic CD scripts
 

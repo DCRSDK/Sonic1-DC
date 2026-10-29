@@ -1,0 +1,837 @@
+{
+  "reference": "Sonic1test29.cdi",
+  "assets": [
+    {
+      "path": "Data/Game/Menu/Amazon.png",
+      "size": 264208,
+      "sha256": "0259d1a82da20b17ee8e0060fd38b9bb907bc346e49a17a7407fe9113a99765c"
+    },
+    {
+      "path": "Data/Game/Menu/ArrowButtons.png",
+      "size": 18448,
+      "sha256": "6300c485413f20618a6a0017109f3d92ce6741833c255cd1532d37553f6f6389"
+    },
+    {
+      "path": "Data/Game/Menu/BG1.png",
+      "size": 67600,
+      "sha256": "eef9e4bdeeb5e2eb4d47936f511936872d4f4ac2ee3d3b22c86d70a3a01df3a1"
+    },
+    {
+      "path": "Data/Game/Menu/CWLogo.png",
+      "size": 264208,
+      "sha256": "9856d6c39ed24cb78eaa07fba6971072807952ed6fc7cf77119ac62e020789ea"
+    },
+    {
+      "path": "Data/Game/Menu/Circle.png",
+      "size": 67600,
+      "sha256": "d67770d40c53b8fde8b9514bef16aa2eaa78f6b80153d09e9037dc569b73f509"
+    },
+    {
+      "path": "Data/Game/Menu/DevLogos.png",
+      "size": 67600,
+      "sha256": "94d44b7c9d7396aae3a2f23aa0e580b251526dd831fe04a53674e9a25eecfe74"
+    },
+    {
+      "path": "Data/Game/Menu/Generic.png",
+      "size": 264208,
+      "sha256": "2d8397447b86d03b093e02b200641f74750682d5a5c06ad87109f6802ffcc151"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_EN.png",
+      "size": 264208,
+      "sha256": "424cab0668953ee0d1cd2b76bc91921b996b26a12cdf203e61d9992701e8a255"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_EN@1x.png",
+      "size": 67600,
+      "sha256": "e2618a9fffc4b69469a443845101c57be2a3ecd9ff18703f3f0e056b98e739d9"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_JA.png",
+      "size": 264208,
+      "sha256": "85191dc456e0fd722d3c7ed483f336f69f72f45fd2848192fc521af9424cc300"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_JA@1x.png",
+      "size": 264208,
+      "sha256": "d68db60d70fe2b9e5cc2255dba0f4f8037f75174de8c2a98f3ec142d09789a7a"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_KO@1x.png",
+      "size": 264208,
+      "sha256": "37d8209e5f95af82f8318623dd526084a2b85832b8ea40011d5520739c777de2"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_RU.png",
+      "size": 264208,
+      "sha256": "ec56d033b1d6dfb549e7e080fcf6908685c8f44206e8af71b76136658e9f3e46"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_RU@1x.png",
+      "size": 67600,
+      "sha256": "94ce7902d9874dc1eb89b29157909d0d54180682c297d8c529eb8cc19fc26d24"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_ZH@1x.png",
+      "size": 264208,
+      "sha256": "2b3a14c3358255fdc55056bbe298d3d30e9058b417bf1a2bae6c68afd6b2609c"
+    },
+    {
+      "path": "Data/Game/Menu/Heading_ZHS@1x.png",
+      "size": 264208,
+      "sha256": "17fbbe02f166af04499e159e9de8346c21ab40f8a040dea15aeec4c42df2753d"
+    },
+    {
+      "path": "Data/Game/Menu/HelpGraphics.png",
+      "size": 264208,
+      "sha256": "f0946f1c5a5c4b43a10177e1e9a16e23801126c7c74646c2f2955bf2b2043591"
+    },
+    {
+      "path": "Data/Game/Menu/Intro.png",
+      "size": 264208,
+      "sha256": "8f836d1f499fe5cfbfaff75df92e0efba9499d25f518ec737653f8b685168113"
+    },
+    {
+      "path": "Data/Game/Menu/Label_EN.png",
+      "size": 264208,
+      "sha256": "1c7199760051e6be3b5ad15d3f772ffc7e448dd77bc9130addd8d1869e49df97"
+    },
+    {
+      "path": "Data/Game/Menu/Label_EN@1x.png",
+      "size": 67600,
+      "sha256": "8a95974255ec986aa69d6a98d64a4ddbc0ac2ddc295170146b7e0f643abd0b85"
+    },
+    {
+      "path": "Data/Game/Menu/Label_JA.png",
+      "size": 264208,
+      "sha256": "39f62105b20bcf8a21c5a05d1ab33f75f5cddcea1bf524050e4fc8d0d5bed2f6"
+    },
+    {
+      "path": "Data/Game/Menu/Label_JA@1x.png",
+      "size": 264208,
+      "sha256": "8dbd69649cfb271018eef7a1e0111ad75f3f7918b4794fcfe39acc230ee38ce4"
+    },
+    {
+      "path": "Data/Game/Menu/Label_KO@1x.png",
+      "size": 264208,
+      "sha256": "518b2883b1d6ac66d0a2fe070abdb61eb21710c47fefab894817d42c3656cb99"
+    },
+    {
+      "path": "Data/Game/Menu/Label_RU.png",
+      "size": 264208,
+      "sha256": "a5f1d3bc183649a787c0c6ab35b43be209f7e697ee5b45ad6fcefdc55f280e71"
+    },
+    {
+      "path": "Data/Game/Menu/Label_RU@1x.png",
+      "size": 67600,
+      "sha256": "9f6b2f8ae9e2a27fefcb47a921c8db615cdb36c88fad3c783930a0c992bc9595"
+    },
+    {
+      "path": "Data/Game/Menu/Label_ZH@1x.png",
+      "size": 264208,
+      "sha256": "d84227fc01bda2f794a1ef688fd073ee37ae9462a78262e373fe64d4bdb15bae"
+    },
+    {
+      "path": "Data/Game/Menu/Label_ZHS@1x.png",
+      "size": 264208,
+      "sha256": "3e2a5723818d568627811ccfc11bfe48684a2b553460275a2782b3ece7914b75"
+    },
+    {
+      "path": "Data/Game/Menu/Moga.png",
+      "size": 264208,
+      "sha256": "b19a464e2165b8d8981e3e8f2891dc9ac81195bcbbbb9489f2cc515075591535"
+    },
+    {
+      "path": "Data/Game/Menu/MogaPro.png",
+      "size": 264208,
+      "sha256": "54755cecf4becb2ff1c2ebefc5f1c6cdaf03eedf700215514059f36e0eb29e5d"
+    },
+    {
+      "path": "Data/Game/Menu/PlayerSelect.png",
+      "size": 67600,
+      "sha256": "4b92e966b33f6188a3bc0d47277963239d566fda3f7232f6fe512c4333ed0e33"
+    },
+    {
+      "path": "Data/Game/Menu/Sega.png",
+      "size": 67600,
+      "sha256": "0771a03b6bdef39232d0162dda41efd73e9a222e44991253b89e17efe5ae2131"
+    },
+    {
+      "path": "Data/Game/Menu/Sega@2x.png",
+      "size": 264208,
+      "sha256": "487ea6870ddf94e6285d8ffb53d64f198c4ecc9c4ff1925e658c1eb23a099dc6"
+    },
+    {
+      "path": "Data/Game/Menu/SegaID.png",
+      "size": 18448,
+      "sha256": "02f31bdd9aeb4f9ce5c4d9807938de18f3d7e8c001926b8dec5cc2838b8dbb95"
+    },
+    {
+      "path": "Data/Game/Menu/SegaJP.png",
+      "size": 67600,
+      "sha256": "232a4795c70f09e6108d8806084dffecac2046ffd7ace22d74528b727854ea86"
+    },
+    {
+      "path": "Data/Game/Menu/SegaJP@2x.png",
+      "size": 264208,
+      "sha256": "51bd21cde674e50d647b57861d6534910cd34a737e0ee601a2bca9b029be7f47"
+    },
+    {
+      "path": "Data/Game/Menu/Sonic.png",
+      "size": 264208,
+      "sha256": "72d33def1f7b9f6962323557f51a773ca53a33958fdeb38d137201bd55ce0ece"
+    },
+    {
+      "path": "Data/Game/Menu/SonicLogo.png",
+      "size": 67600,
+      "sha256": "54f17ff1f620bf1135717915d0770fa50868294950ca50a948aafa98f589788f"
+    },
+    {
+      "path": "Data/Game/Menu/Symbols.png",
+      "size": 18448,
+      "sha256": "006a591c43090a094b55da5c1e398126b09589b65574f0144f4eb28928542a12"
+    },
+    {
+      "path": "Data/Game/Menu/Text_EN.png",
+      "size": 264208,
+      "sha256": "a0a16d3cc8521d46e939181ff0cad5f85cb046f0c4099ea7f1298b13e1363871"
+    },
+    {
+      "path": "Data/Game/Menu/Text_JA.png",
+      "size": 264208,
+      "sha256": "16211027d0b73f04972ffca36c8b2d1643de32f9e87fc0f687af2c36a5ba6c99"
+    },
+    {
+      "path": "Data/Game/Menu/Text_JA@1x.png",
+      "size": 264208,
+      "sha256": "ef7353956358b1d354764f5d1fe9c63548486f73dc113bd5f6f752d00b220fb7"
+    },
+    {
+      "path": "Data/Game/Menu/Text_KO.png",
+      "size": 264208,
+      "sha256": "c9e98af7a14fc578c84d1f578c2cb8e343db99f94958f1224c85d502260ede6e"
+    },
+    {
+      "path": "Data/Game/Menu/Text_KO@1x.png",
+      "size": 264208,
+      "sha256": "4635fc91e8053008187fb39f5b51d806832a64f1100046321f1c47480e87b891"
+    },
+    {
+      "path": "Data/Game/Menu/Text_ZH@1x.png",
+      "size": 264208,
+      "sha256": "653d83b181009595f845a72665b12fbaa1b95f6d4fb542b0a318146e7e43611a"
+    },
+    {
+      "path": "Data/Game/Menu/Text_ZHS@1x.png",
+      "size": 264208,
+      "sha256": "e912a87cd8fab5b6de9298ed6b4786b414bfa5669ddb995e99b68a7b82c70eeb"
+    },
+    {
+      "path": "Data/Game/Menu/TimeAttack1.png",
+      "size": 264208,
+      "sha256": "de9249672f7580429b8841eb0c9a8d8b945d2f8e6687a8cc948f8e0ad35f1c72"
+    },
+    {
+      "path": "Data/Game/Menu/TimeAttack2.png",
+      "size": 264208,
+      "sha256": "6ce557633a1e6d0f36f06511bf82c25e34e699cfa0282207e67b26a606d37c89"
+    },
+    {
+      "path": "Data/Game/Menu/TimeAttack3.png",
+      "size": 264208,
+      "sha256": "f99d353da2070ad9f0a34cb74557920c0d4ab32e2523c83c20b863d5b2b04174"
+    },
+    {
+      "path": "Data/Game/Menu/TimeAttack4.png",
+      "size": 264208,
+      "sha256": "a6c1e144b7a0dde78d4351dd257492574151901a7a6a2b6dedc26f89128c4565"
+    },
+    {
+      "path": "Data/Game/Menu/VirtualDPad.png",
+      "size": 67600,
+      "sha256": "02d0c2252baac7596ef598e254c1dca0fd0ee82f28e99ebc4ca2084881def45d"
+    },
+    {
+      "path": "Data/Game/Menu/VirtualDPadM.png",
+      "size": 67600,
+      "sha256": "9c49cb2f437a622f4e677db1474c1057d88ac03774f878a14843af3619d012cf"
+    },
+    {
+      "path": "Data/Game/Models/Package_EU.png",
+      "size": 264208,
+      "sha256": "c1248d79f9b903e37ecef7626922783393e6a9d3b8ca75764e33fe4f3f82a235"
+    },
+    {
+      "path": "Data/Game/Models/Package_JP.png",
+      "size": 264208,
+      "sha256": "7c81574430c867582006617e121f6d0f975fd7891210bdbc3e18c1ba6b27d8b1"
+    },
+    {
+      "path": "Data/Game/Models/Package_US.png",
+      "size": 264208,
+      "sha256": "bde7a5114c1c6e099a9da3fafa61bc19c9fcd615eb930887868b683ba8027e1f"
+    },
+    {
+      "path": "Data/Music/ActComplete.ogg",
+      "size": 281388,
+      "sha256": "5edfa0edbc9ee91572603db82f15c2385c059d9fc56ea54e4a4a6206e481ec43"
+    },
+    {
+      "path": "Data/Music/Boss.ogg",
+      "size": 939040,
+      "sha256": "dd21521d8e38ddffa7ca626312b3ca59426d1dc315e179989c64c66c0e217366"
+    },
+    {
+      "path": "Data/Music/Continue.ogg",
+      "size": 434110,
+      "sha256": "c7b6b59a4ff3530dbd0e6ad32ed33c02672268e40aea2f663ce9afae15ebc91e"
+    },
+    {
+      "path": "Data/Music/Credits.ogg",
+      "size": 5351202,
+      "sha256": "6d7f6b21be52d16ee042338313eb06eb63be0d219caa08e56f2563845307e86d"
+    },
+    {
+      "path": "Data/Music/Drowning.ogg",
+      "size": 539708,
+      "sha256": "49671366b4bcd9b908cacd566effdef5b021c8ca2739c3fe2aec92ed9684fc6f"
+    },
+    {
+      "path": "Data/Music/Ending.ogg",
+      "size": 800356,
+      "sha256": "b47bf275eebfe66849d38cc508ab68af04e02183b38bc41abb11efff37b1b9cc"
+    },
+    {
+      "path": "Data/Music/Final.ogg",
+      "size": 931392,
+      "sha256": "716d44927ef7f92046a2a342d4954e5406a464314920556e697f0e129eb87d44"
+    },
+    {
+      "path": "Data/Music/GameOver.ogg",
+      "size": 534830,
+      "sha256": "c325fb1c1353b2081bf2c9d8712364ffc3ba58a9b475c84d74e2d5d6875d6085"
+    },
+    {
+      "path": "Data/Music/GreenHill.ogg",
+      "size": 2328480,
+      "sha256": "b5c0062baaab2c3c910641334a012d7ad8a559f4d63ad8129abca7d155f67745"
+    },
+    {
+      "path": "Data/Music/GreenHill_F.ogg",
+      "size": 1841730,
+      "sha256": "0697b25af2a5e48ab1e6540fac4e388af5bd341e977e4ba9c0494ef7002323e8"
+    },
+    {
+      "path": "Data/Music/Invincibility.ogg",
+      "size": 525162,
+      "sha256": "3c19cb2573f708dbea991944076ca1f183c01756c0394166866c1655b211f779"
+    },
+    {
+      "path": "Data/Music/Invincibility_F.ogg",
+      "size": 420128,
+      "sha256": "5b37e09106ea095f91fbd3b8be62f1a54b3db0e856e10682167828c539deac25"
+    },
+    {
+      "path": "Data/Music/Labyrinth.ogg",
+      "size": 1608768,
+      "sha256": "5d84f04d3e897ade20683c370bcbe1ab830bb8508a5165ab5182f7a2a5ae807b"
+    },
+    {
+      "path": "Data/Music/Labyrinth_F.ogg",
+      "size": 1287014,
+      "sha256": "a6ee76a6a91895ab0784652d25f9c93e88ffd0d5ed3ac991ec9a9ae278a9dec7"
+    },
+    {
+      "path": "Data/Music/MainMenu.ogg",
+      "size": 3069670,
+      "sha256": "8e344c2ef0310155b8ac59273656c1a362e2a5a5ab7d7a6a25d89e25422dbe91"
+    },
+    {
+      "path": "Data/Music/Marble.ogg",
+      "size": 1686680,
+      "sha256": "a1f5fca46fdc7c858a0bcaf58ae994d21abdb46c15860ea9666843fb6110a113"
+    },
+    {
+      "path": "Data/Music/Marble_F.ogg",
+      "size": 1348950,
+      "sha256": "9ade9857b7992ad78816454a0b9a06c312479869d24c214fc0aa10efb61d0daa"
+    },
+    {
+      "path": "Data/Music/MenuIntro.ogg",
+      "size": 426212,
+      "sha256": "7ba5bc1257645a443cfa84ce317dcf362b68ffdf6d1a744e871cd1a53b6d00be"
+    },
+    {
+      "path": "Data/Music/ScrapBrain.ogg",
+      "size": 3175200,
+      "sha256": "b0ba271722f5ec7aba8a415f69e4fd02694965f2ae61d17218b8c72fa256f43d"
+    },
+    {
+      "path": "Data/Music/ScrapBrain_F.ogg",
+      "size": 2540160,
+      "sha256": "ab1d7393715d0c2450206208a37770a234bb4e1f90011ff3dbeb91da0f676297"
+    },
+    {
+      "path": "Data/Music/SpecialStage.ogg",
+      "size": 1450968,
+      "sha256": "f66fe99926b45df01713a27f73f5aa222dad66f80e62efd73e23d61ff41ccb29"
+    },
+    {
+      "path": "Data/Music/SpringYard.ogg",
+      "size": 1795362,
+      "sha256": "9752f8efb9df599abb48fc50c16b21fdf6e64f33e9fbcaaf83a0862188ebf583"
+    },
+    {
+      "path": "Data/Music/SpringYard_F.ogg",
+      "size": 1437014,
+      "sha256": "670d8e57f84d2ef4ad2e7d3288829db41559e235d684e29587a1295e7c4c6c1e"
+    },
+    {
+      "path": "Data/Music/StarLight.ogg",
+      "size": 1947456,
+      "sha256": "6757d57d39f99870f57efd6e626fba73a2f20e074617e3841baa879631eada6a"
+    },
+    {
+      "path": "Data/Music/StarLight_F.ogg",
+      "size": 1557964,
+      "sha256": "4c7c7f1b4bc41df56573ab4321d5334b563d0cf791621a1eb7689864193adf96"
+    },
+    {
+      "path": "Data/Music/Titlescreen.ogg",
+      "size": 387242,
+      "sha256": "a4fa1ab3c77cc89be90f8d11ffb63a6a5135a90891670dcf0d9c09a2c607f55b"
+    },
+    {
+      "path": "Data/SoundFX/Global/1Up.wav",
+      "size": 86367,
+      "sha256": "645f7089d77c167b096c30be8d355d261d7b2d978a1d8ab545be6b75fd0a313b"
+    },
+    {
+      "path": "Data/SoundFX/Global/BackButton.wav",
+      "size": 5886,
+      "sha256": "34115b07086289f1f697bff6fe22a68445aba925003e616a0be59568b9c7e296"
+    },
+    {
+      "path": "Data/SoundFX/Global/BlueShield.wav",
+      "size": 16001,
+      "sha256": "69dafbf24bd4d6c3bf139b0e2705f77fe1867fd40e085711df115023c78bfbac"
+    },
+    {
+      "path": "Data/SoundFX/Global/BonusPoints.wav",
+      "size": 9562,
+      "sha256": "c27ca5c195efbfff49dd13eba448603410045f85fd4f84c9a82f8009c71c4d8f"
+    },
+    {
+      "path": "Data/SoundFX/Global/BubbleBounce.wav",
+      "size": 11774,
+      "sha256": "ad8126ef0d5c5ec7d02051eb5ad2f42340e29cc02246806cba4950cabc45a32a"
+    },
+    {
+      "path": "Data/SoundFX/Global/BubbleShield.wav",
+      "size": 15817,
+      "sha256": "7306369162ff52df921225ad154a01845b962ed8bfbaa6e6077459440bb673d0"
+    },
+    {
+      "path": "Data/SoundFX/Global/Catch.wav",
+      "size": 2167,
+      "sha256": "e1baf8e805694aba05502c8c87f165961b77425fe2029f66896cd6aa903751e4"
+    },
+    {
+      "path": "Data/SoundFX/Global/Charge.wav",
+      "size": 40426,
+      "sha256": "60e8471f3f2215de6b772b36124eb169491fc5e26b4930f672bb1cccd4ee474b"
+    },
+    {
+      "path": "Data/SoundFX/Global/Destroy.wav",
+      "size": 9915,
+      "sha256": "47b07b05ea86155dcaa44a13ecbb1bf8a44e3ecbaa3e409c44929e03afd6df98"
+    },
+    {
+      "path": "Data/SoundFX/Global/Event.wav",
+      "size": 55134,
+      "sha256": "fb5c804e3e4b46604de72bc2ce6ecdabda5e52330449196b439b72e64e54e5dd"
+    },
+    {
+      "path": "Data/SoundFX/Global/Explosion.wav",
+      "size": 8621,
+      "sha256": "157a73c468be506a00113ecd2acce1558f91f714f5e1d22dcba2dc7887643ca1"
+    },
+    {
+      "path": "Data/SoundFX/Global/FireDash.wav",
+      "size": 18310,
+      "sha256": "245419e483bc3332a631fe26b8192b957ea06f85ae1c0a21dd6f2f6cf553ab50"
+    },
+    {
+      "path": "Data/SoundFX/Global/FireShield.wav",
+      "size": 15809,
+      "sha256": "0f92cf0c164bb7a6b5aea394f2f11462e6c49077744e9c84e07f12fd16df1cf4"
+    },
+    {
+      "path": "Data/SoundFX/Global/Flying.wav",
+      "size": 4364,
+      "sha256": "e38d64dc947ebdfecc9a0888d1d07038655ddf2d295eaf2b09644ce769c48c0a"
+    },
+    {
+      "path": "Data/SoundFX/Global/Hurt.wav",
+      "size": 19883,
+      "sha256": "ccb4e5c94cd3dc68f7acf2ea01d9c15c770785c13760ecfcd493578df327ab99"
+    },
+    {
+      "path": "Data/SoundFX/Global/InstaShield.wav",
+      "size": 5905,
+      "sha256": "151bf65a4ca31809db6e4f86ddef60af47ad4446dee465069985ea7afc3b2d17"
+    },
+    {
+      "path": "Data/SoundFX/Global/Jump.wav",
+      "size": 9562,
+      "sha256": "a312d706ed38b656ce3becc2e2655baafd0a3385cdd149cb1488d3f8d11c1836"
+    },
+    {
+      "path": "Data/SoundFX/Global/LampPost.wav",
+      "size": 10343,
+      "sha256": "5703208fe2eb214c23fb93532a267010598afb52a338fe6ad1bd8d65b2aa2642"
+    },
+    {
+      "path": "Data/SoundFX/Global/Landing.wav",
+      "size": 3666,
+      "sha256": "49a52e44cd3571dc837af02cf888497575abdc51c393bb28995ad53fdb3d85ae"
+    },
+    {
+      "path": "Data/SoundFX/Global/LightningJump.wav",
+      "size": 9945,
+      "sha256": "e68abf3f7fe3f07e7dae931464a0064964dd596108e3d15401e7db6c4c8f4373"
+    },
+    {
+      "path": "Data/SoundFX/Global/LightningShield.wav",
+      "size": 15812,
+      "sha256": "cff12257b4a9f0c7158a7f90b6d3b3c12d044e60b88f03b010cb1db06f56ce82"
+    },
+    {
+      "path": "Data/SoundFX/Global/LoseRings.wav",
+      "size": 33115,
+      "sha256": "08546584d4c9a6f083248b8ac0f2b89851a65ac0f22ebeddaa6e769b812f4326"
+    },
+    {
+      "path": "Data/SoundFX/Global/MenuButton.wav",
+      "size": 3704,
+      "sha256": "27277583b5573ad22b1d6b643bbcd2addc34d3928f8e1a6eef350bbf9e10b45b"
+    },
+    {
+      "path": "Data/SoundFX/Global/Release.wav",
+      "size": 31535,
+      "sha256": "40c0b22c4bcdee4ec6b20438be868a07cb7402f77e2b5c40d7225d3e2ecb2db2"
+    },
+    {
+      "path": "Data/SoundFX/Global/Resume.wav",
+      "size": 5886,
+      "sha256": "159712496dd5a5767322d1156052120be370ed00430c64ae9535735d24964735"
+    },
+    {
+      "path": "Data/SoundFX/Global/Ring.wav",
+      "size": 13319,
+      "sha256": "6f7fda11420eaf6d11112e056611da3879d17890191ed358d06886526a5eb927"
+    },
+    {
+      "path": "Data/SoundFX/Global/Rolling.wav",
+      "size": 44529,
+      "sha256": "d773201645c77fe704825ca0536bb00e08def578ffa226ede49b166af6acb525"
+    },
+    {
+      "path": "Data/SoundFX/Global/ScoreAdd.wav",
+      "size": 735,
+      "sha256": "868f1a7e7c138d78372abc5c7a8f392379e9659b754199b2cc98a6112ef7fbba"
+    },
+    {
+      "path": "Data/SoundFX/Global/ScoreTotal.wav",
+      "size": 37853,
+      "sha256": "a02fcb2a7ef21aa5bd789ca402ae9089ac274aa6059f7200860b24653faffae6"
+    },
+    {
+      "path": "Data/SoundFX/Global/Select.wav",
+      "size": 12890,
+      "sha256": "1fe3b7b89582bcec6769552aa478d3e911f427af7a3e503cbfa8ba4f1be46415"
+    },
+    {
+      "path": "Data/SoundFX/Global/SignPost.wav",
+      "size": 40092,
+      "sha256": "c7cec7eb9b05e9e0fe3e222e7ae56707b6e897e95bdbb9e101b5e4481480f8f3"
+    },
+    {
+      "path": "Data/SoundFX/Global/Skidding.wav",
+      "size": 10317,
+      "sha256": "baef22079407e6bc54005129ce4bdd03ac9fe28c39eafef00e6d807c604da664"
+    },
+    {
+      "path": "Data/SoundFX/Global/Sliding.wav",
+      "size": 5506,
+      "sha256": "842afdf8ce2ac5f7940d3cb6589ef5d4632480e2088310e176dc8c1c2ba1319d"
+    },
+    {
+      "path": "Data/SoundFX/Global/SpecialRing.wav",
+      "size": 22848,
+      "sha256": "76744d558ddcc817ac473706c5de49a47c3019644f36fe01b51293b6a6149282"
+    },
+    {
+      "path": "Data/SoundFX/Global/SpecialWarp.wav",
+      "size": 36280,
+      "sha256": "da26b68bcba6c7080afca69104ec6be43eb62430f89e0ca6c32693b6b67b7015"
+    },
+    {
+      "path": "Data/SoundFX/Global/Spike.wav",
+      "size": 15472,
+      "sha256": "54f8bf9e547c9c3ddab547578fd95f47ab9186f536e0bf9a631b9d8df662bdad"
+    },
+    {
+      "path": "Data/SoundFX/Global/SpikesMove.wav",
+      "size": 5120,
+      "sha256": "cae4cf7430de7e8d8b508f497e14f3519ba9d4921dbcfd814d708865938386dc"
+    },
+    {
+      "path": "Data/SoundFX/Global/Spring.wav",
+      "size": 18707,
+      "sha256": "b9ff682b341c156a38329af86cf74b54ae7b3adce72d056a39634f288215ebcf"
+    },
+    {
+      "path": "Data/SoundFX/Global/Tired.wav",
+      "size": 6356,
+      "sha256": "99c8907e9639c4117d1d5af9413339af2f7ebca7a6d52c588b72d0f9efe8097b"
+    },
+    {
+      "path": "Data/SoundFX/Global/Transform.wav",
+      "size": 60963,
+      "sha256": "1a7ab160a8784b0640a411dcf090ec163456214c0df88be43e610eb744158032"
+    },
+    {
+      "path": "Data/SoundFX/Stage/BatbrainFly.wav",
+      "size": 5112,
+      "sha256": "45707b7562e209b9c5a91ffb7cbc2faa43bf9519a1e904cfe33f4b206fad2fb1",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/BlockBreak.wav",
+      "size": 53028,
+      "sha256": "c790764077bfd97269b4bf5da5a31b0e466779c054e865e9e97ae5d6794e83ee",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/BossHit.wav",
+      "size": 14806,
+      "sha256": "1fd8ae2aa7706b84b6888398899a7c5758600437426e8e927ab45f5b59cc9db2",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Breathing.wav",
+      "size": 7744,
+      "sha256": "4bfd9e0bdb3db31c29a303f3609f3bf9dde8e9c19410fbeb50d1258eb1de53ad",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Bumper.wav",
+      "size": 12276,
+      "sha256": "dac6d242d54c783ad8b9b4603030cccb97d6d084b2539af40de0533744c63ccf",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/ButtonPress.wav",
+      "size": 818,
+      "sha256": "19a00a22271ae02d59abf6bfaa85da7d89cac2abb1055873fd23cb23af62523a",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Buzzsaw.wav",
+      "size": 33358,
+      "sha256": "aeb9224b76a42f1b7f9d65c542bee0cb07eb36e51d1beb328b4925cef4200e01",
+      "rate": 11025,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/ChainPull.wav",
+      "size": 4890,
+      "sha256": "aa3131c8d76557ae35407658adbd3decbf88ae7889ac7f92086ef6399b759ee3",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Continue.wav",
+      "size": 47744,
+      "sha256": "cf6a0d327e53e3d10f36498c751cf4ee164567c55b66e07af5dfc986c66305e4",
+      "rate": 11025,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Crusher.wav",
+      "size": 11906,
+      "sha256": "8f8993694195e8e090bf12a7baa637805c0354175e64058d86aa661a32a6ee59",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/DrownAlert.wav",
+      "size": 16670,
+      "sha256": "98e6969fa03dbb7e213d123ca346f0db17b81a8ec4819a7cb7e8cb2ee97fd191",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Drowning.wav",
+      "size": 36806,
+      "sha256": "f331993d227ae456ac9929885806a228829df369173207e1a37fd6bbe8b3c6a1",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/ElectricArc.wav",
+      "size": 5612,
+      "sha256": "db4dd65492d49442ad1217797832357262df0ee82711dddec474b6888c1a5aae",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Emerald.wav",
+      "size": 62192,
+      "sha256": "6293573142729adb9bc538bbbbd34d927c8456415f41cbe6b3bdd9dbf6132778",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Exit_SS.wav",
+      "size": 39986,
+      "sha256": "9515b563d0961e2a375ee5a3f7efda725470de418458619470b4aaae4d4db064",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/FireBurn.wav",
+      "size": 13470,
+      "sha256": "45906346c987252dfb0fb7697859cded2989390569cf26cc7d0cf29440ad9e1c",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/FlameThrower.wav",
+      "size": 28388,
+      "sha256": "2b56afa65b93be42eb9afd3752af3e6c9a0430238a3bd6fa3f65f194085c7dc8",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/FlappingDoor.wav",
+      "size": 5230,
+      "sha256": "5f4ac652ccffe7a850708e5dc859f26c9b68e28a55842fc802e8028aec29d3c0",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/GemBlockSS.wav",
+      "size": 3030,
+      "sha256": "e8afd95d5a52627acf515ee5bc0147562a370e7f9364a5dbf2f6f43776eda2a6",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/LargeWall.wav",
+      "size": 41266,
+      "sha256": "badd05b3800589c7b1dd29645bdafdcdfddb0799562f86ec7c3cdde7b59d9840",
+      "rate": 11025,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/LedgeBreak.wav",
+      "size": 54114,
+      "sha256": "542ce4d4139ccb045aa8b27ee187f4017635b23ecf7bc3d7c4dd1e5b51cc6c3b",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/LedgeBreak2.wav",
+      "size": 54114,
+      "sha256": "1270f69d666238b51e125b9ad1325d92a266cbd844e3d00e3f8554c321c403a7",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/PushBlock.wav",
+      "size": 5618,
+      "sha256": "45d2a519d5532acca0273a06efc82dc97b7f19ea94ebd4dcf7ef434d5ca006f8",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/RotateSS.wav",
+      "size": 2312,
+      "sha256": "ceeab8188d739efb4e782809f755d8c376f11f6458d3f01180cd2d4b3d5ac44c",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Sega.wav",
+      "size": 36300,
+      "sha256": "e83da9bf31521bac8b309ae49c3be0ccabdeec6531afbe3de21ff5b2f08ff7f7",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/SmallFireball.wav",
+      "size": 15158,
+      "sha256": "2589b3a1fdb9121701ec962bedbdee8d0d7c848601ced77760191d8f47b0006d",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/WaterSplash.wav",
+      "size": 42330,
+      "sha256": "dad96c74a557c0e2baec05480c0e498f089bfdda8d0d28b6b60fb009e2e2680b",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Waterfall.wav",
+      "size": 36732,
+      "sha256": "59d3a01905fc00b6fd4e0c4e9397ace08747ca758b392a194dff251ea2391d19",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    },
+    {
+      "path": "Data/SoundFX/Stage/Waterfall2.wav",
+      "size": 35488,
+      "sha256": "575e029f9f4392d4730809992d95013be31628875eb8dea736cc127a45678860",
+      "rate": 22050,
+      "channels": 1,
+      "sample_width": 1
+    }
+  ]
+}

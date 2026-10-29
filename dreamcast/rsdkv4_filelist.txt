@@ -222,3 +222,69 @@ Data/SoundFX/Stage/Waterfall.wav
 Data/SoundFX/Stage/Waterfall2.wav
 Data/SoundFX/Stage/WaterGeyser.wav
 Data/SoundFX/Stage/WaterSplash.wav
+
+# --- 2013 native menu / model textures ------------------------------------
+# Harvested from the engine's own LoadTexture() string literals, which are the
+# only paths DC_NativeTryLoadDtex will ever fopen (TimeAttack%d.png expanded to
+# 1..4, the only name the code builds at runtime).
+
+Data/Game/Menu/ArrowButtons.png
+Data/Game/Menu/BG1.png
+Data/Game/Menu/CWLogo.png
+Data/Game/Menu/Circle.png
+Data/Game/Menu/DevLogos.png
+Data/Game/Menu/Generic.png
+Data/Game/Menu/Heading_EN.png
+Data/Game/Menu/Heading_EN@1x.png
+Data/Game/Menu/Heading_JA@1x.png
+Data/Game/Menu/Heading_KO@1x.png
+Data/Game/Menu/Heading_RU.png
+Data/Game/Menu/Heading_RU@1x.png
+Data/Game/Menu/Heading_ZH@1x.png
+Data/Game/Menu/Heading_ZHS@1x.png
+Data/Game/Menu/HelpGraphics.png
+Data/Game/Menu/Intro.png
+Data/Game/Menu/Label_EN.png
+Data/Game/Menu/Label_EN@1x.png
+Data/Game/Menu/Label_JA@1x.png
+Data/Game/Menu/Label_KO@1x.png
+Data/Game/Menu/Label_RU.png
+Data/Game/Menu/Label_RU@1x.png
+Data/Game/Menu/Label_ZH@1x.png
+Data/Game/Menu/Label_ZHS@1x.png
+Data/Game/Menu/Moga.png
+Data/Game/Menu/MogaPro.png
+Data/Game/Menu/PlayerSelect.png
+Data/Game/Menu/Sega.png
+Data/Game/Menu/Sega@2x.png
+Data/Game/Menu/SegaID.png
+Data/Game/Menu/SegaJP.png
+Data/Game/Menu/SegaJP@2x.png
+Data/Game/Menu/SonicLogo.png
+Data/Game/Menu/Symbols.png
+Data/Game/Menu/Text_EN.png
+Data/Game/Menu/Text_JA@1x.png
+Data/Game/Menu/Text_KO.png
+Data/Game/Menu/Text_ZH@1x.png
+Data/Game/Menu/Text_ZHS@1x.png
+Data/Game/Menu/TimeAttack1.png
+Data/Game/Menu/TimeAttack2.png
+Data/Game/Menu/TimeAttack3.png
+Data/Game/Menu/TimeAttack4.png
+Data/Game/Menu/VirtualDPad.png
+Data/Game/Menu/VirtualDPadM.png
+
+Data/Game/Models/Package_EU.png
+Data/Game/Models/Package_JP.png
+Data/Game/Models/Package_US.png
+
+# Present in the retail pack but referenced by NOTHING in the engine, so the
+# Dreamcast never opens them. They are in the currently shipped Data/Game/Menu
+# only because the whole extracted folder was converted by hand; at 1024x1024
+# VQ that is ~1.5 MB of dead disc space. Uncomment to match that disc exactly.
+#Data/Game/Menu/Amazon.png
+#Data/Game/Menu/Sonic.png
+#Data/Game/Menu/Heading_JA.png
+#Data/Game/Menu/Label_JA.png
+#Data/Game/Menu/Text_JA.png
+#Data/Game/Menu/Text_KO@1x.png

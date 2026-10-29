@@ -7,17 +7,30 @@ is nothing to enumerate -- a name has to be known before it can be looked up.
 
 So this bootstraps instead. Data/Game/GameConfig.bin is at a path we know, and
 it names the global sound effects and lists every stage folder; each stage's
-StageConfig.bin then names that stage's sound effects. Music is the one class
-the pack cannot tell us about -- RSDKv4 sets tracks from script bytecode, not
-from a config -- so music names come from a candidate list and anything absent
-is simply skipped.
+StageConfig.bin then names that stage's sound effects. Music and the 2013 menu
+textures are the classes the pack cannot tell us about -- RSDKv4 sets tracks
+from script bytecode and the native UI loads its textures from string literals
+in C++ -- so those names come from a candidate list, and anything absent is
+simply skipped.
+
+By default it writes exactly what the Dreamcast build needs loose beside
+Data.rsdk:
+
+    Music/                  streamed as raw PCM (no Vorbis decoder on-console)
+    SoundFX/Global/         raw PCM, software-mixed
+    Game/Menu/              native UI textures, converted to .dtex
+    Game/Models/            ditto, the About-screen box art
+
+Everything else -- sprites, tilesets, scripts, palettes, stage sfx -- stays in
+the pack and is read from there.
 
 Usage:
     rsdkv4_extract.py <Data.rsdk> <outdir> [--all] [--quiet]
 
-    --all            extract everything named, not just Music and
-                     SoundFX/Global. The Dreamcast pipeline does not need it:
-                     the port reads stage sfx straight from the pack.
+    --all            extract every candidate name, not just the four classes
+                     above. Useful for looking around; the disc does not want
+                     it, and note that it writes a loose Game/GameConfig.bin,
+                     which on the disc would override the packed one.
     --names=<file>   candidate paths, one per line. Defaults to
                      rsdkv4_filelist.txt beside this script.
 """
@@ -219,10 +232,15 @@ def main(argv):
         say("-- no names file; music cannot be found without one")
 
     keep_all = "--all" in flags
+    LOOSE = ("Data/Music/", "Data/SoundFX/Global/",
+             "Data/Game/Menu/", "Data/Game/Models/")
     def wanted_here(path):
         if keep_all:
             return path.startswith("Data/")
-        return path.startswith("Data/Music/") or path.startswith("Data/SoundFX/Global/")
+        # Data/Game/ is deliberately NOT a prefix here: it would pull
+        # GameConfig.bin out too, and a loose copy of that beside Data.rsdk
+        # overrides the packed one.
+        return path.startswith(LOOSE)
 
     seen_c, wanted = set(), []
     for path in cand:

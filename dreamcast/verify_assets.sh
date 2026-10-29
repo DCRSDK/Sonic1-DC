@@ -45,6 +45,51 @@ if [[ -d "$stage/SoundFX/Global" ]]; then
   done < <(find "$stage/SoundFX/Global" -type f -iname '*.wav' -print0)
 fi
 
+# ---- the 2013 menu textures must be DTEX, not PNG -------------------------
+# A real PNG left here is the silent failure the .dtex path was written to
+# avoid: DC_NativeTryLoadDtex sees no 'DTEX' magic, hands back to stbi_load,
+# and stbi OOMs on the DC heap for anything over ~256x256 -- so the texture is
+# simply missing on screen with nothing logged. Every one of these is 512x512
+# or larger, so a PNG here means an invisible menu element, not a slow one.
+#
+# The header is also checked for sanity, since a 16-byte head that says DTEX
+# but carries nonsense dimensions is rejected at load and lands in the same
+# place.
+if [[ -d "$stage/Game" ]]; then
+  n=0; bad=0; vq=0; plain=0
+  while IFS= read -r -d '' f; do
+    n=$((n+1))
+    if [[ "$(magic4 "$f")" != "DTEX" ]]; then
+      printf 'FAIL still a real PNG -- the Dreamcast cannot decode it, the menu will be missing it: %s\n' "$f"
+      bad=$((bad+1)); fail=1
+      continue
+    fi
+    # Own IFS: this script sets IFS to newline+tab, so a bare `read` would put
+    # the whole awk line into the first variable.
+    IFS=' ' read -r fmt potw poth < <(od -An -j5 -N9 -tu1 -- "$f" \
+      | awk '{print $1, $6 + $7 * 256, $8 + $9 * 256}')
+    case "$fmt" in
+      3|4) vq=$((vq+1)) ;;
+      1|2) plain=$((plain+1)) ;;
+      *)   printf 'FAIL unknown dtex format %s: %s\n' "$fmt" "$f"; bad=$((bad+1)); fail=1; continue ;;
+    esac
+    if (( potw < 8 || poth < 8 || potw > 1024 || poth > 1024 )); then
+      printf 'FAIL dtex pot size %sx%s is outside what the loader accepts: %s\n' "$potw" "$poth" "$f"
+      bad=$((bad+1)); fail=1
+    fi
+  done < <(find "$stage/Game" -type f -iname '*.png' -print0)
+  if (( n )); then
+    printf 'menu art:    %d checked, %d wrong (%d VQ, %d plain 16bpp)\n' "$n" "$bad" "$vq" "$plain"
+  fi
+fi
+
+# A loose GameConfig.bin next to Data.rsdk OVERRIDES the packed one. Nothing in
+# this pipeline writes it, so finding one means it was copied in by hand.
+if [[ -f "$stage/Game/GameConfig.bin" ]]; then
+  printf 'FAIL Data/Game/GameConfig.bin is staged loose -- it overrides the packed one. Delete it.\n'
+  fail=1
+fi
+
 # ---- exact size check against the source durations ------------------------
 check_against_source() {
   local sub=$1 pattern=$2 rate=$3 ch=$4 label=$5
@@ -100,7 +145,7 @@ if [[ -d "$stage/SoundFX/Stage" ]]; then
 fi
 
 # ---- summary ---------------------------------------------------------------
-for sub in Music SoundFX/Global; do
+for sub in Music SoundFX/Global Game/Menu Game/Models; do
   [[ -d "$stage/$sub" ]] || continue
   printf '%-16s %4d files, %8d KB\n' "$sub" \
     "$(find "$stage/$sub" -type f | wc -l)" \

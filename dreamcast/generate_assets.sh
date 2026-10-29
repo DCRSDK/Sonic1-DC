@@ -2,9 +2,9 @@
 # ---------------------------------------------------------------------
 # Sonic 1 / RSDKv4 — Dreamcast asset conversion
 #
-#   ./generate_assets.sh <path/to/Data.rsdk> [stage_dir]
+#   ./generate_assets.sh <path/to/Data.rsdk> [stage_dir] [--menu-no-vq] [--skip-menu]
 #
-# Takes the game's own datafile, pulls out the two asset classes the Dreamcast
+# Takes the game's own datafile, pulls out the three asset classes the Dreamcast
 # build reads loose, converts them, and leaves everything else to stream out of
 # the untouched Data.rsdk.
 #
@@ -12,10 +12,14 @@
 #
 #   <stage_dir>/Data/Music/*.ogg           headerless signed 8-bit, STEREO, 22050
 #   <stage_dir>/Data/SoundFX/Global/*.wav  headerless signed 8-bit, MONO,   22050
+#   <stage_dir>/Data/Game/Menu/*.png       VQ .dtex, streamed straight to VRAM
+#   <stage_dir>/Data/Game/Models/*.png     ditto (About-screen box art)
 #
-# Both keep their original extensions because GameConfig.bin resolves them by
-# filename; only the CONTENTS change. Neither is a container or a RIFF file any
-# more -- the names are a lie the loader is in on.
+# Every one keeps its original extension. The audio does because GameConfig.bin
+# resolves assets by filename; the textures do because DC_NativeTryLoadDtex
+# identifies the format by its 'DTEX' magic, not the extension. Only the
+# CONTENTS change -- none of these is a container or a RIFF or a PNG any more.
+# The names are a lie the loaders are in on.
 #
 # Data.rsdk itself is never modified, and the copy you point this at does not
 # have to be the one you ship. The disc needs BOTH: the loose Data/ tree built
@@ -59,17 +63,40 @@
 #   sfx scope       CD stages Global AND Stage sfx loose. Sonic 1 stages ONLY
 #                   Global -- see the note in sfx_step_1_global_to_raw.sh.
 #
-# REQUIREMENTS: bash, python3, ffmpeg, ffprobe.
+#   menu art        CD has no native 2013 menu, so the v3 pipeline has nothing
+#                   equivalent. RSDKv5's img_step_1_todtex.sh is the nearest
+#                   relative.
+#
+# REQUIREMENTS: bash, python3, ffmpeg, ffprobe, and for the menu textures
+# python3-pil plus python3-numpy (numpy only for VQ). --skip-menu drops both.
 # ---------------------------------------------------------------------
 set -euo pipefail
 IFS=$'\n\t'
 
 die() { printf 'error: %s\n' "$*" >&2; exit 1; }
-usage() { printf 'Usage: %s <path/to/Data.rsdk> [stage_dir]\n' "${0##*/}" >&2; exit 2; }
+usage() {
+  printf 'Usage: %s <path/to/Data.rsdk> [stage_dir] [--menu-no-vq] [--skip-menu]\n' \
+    "${0##*/}" >&2
+  exit 2
+}
 
-[[ $# -ge 1 && $# -le 2 ]] || usage
+src_in=""
+stage_arg=""
+menu_vq=1
+skip_menu=0
 
-src_in=$1
+for arg in "$@"; do
+  case "$arg" in
+    --menu-no-vq) menu_vq=0 ;;
+    --skip-menu)  skip_menu=1 ;;
+    -*)           usage ;;
+    *)            if   [[ -z "$src_in"   ]]; then src_in=$arg
+                  elif [[ -z "$stage_arg" ]]; then stage_arg=$arg
+                  else usage; fi ;;
+  esac
+done
+
+[[ -n "$src_in" ]] || usage
 [[ -e "$src_in" ]] || die "no such file or directory: $src_in"
 
 for tool in ffmpeg ffprobe; do
@@ -121,7 +148,7 @@ fi
 
 # Default the stage to build-dc, which is where the loose Data/ tree has to end
 # up next to Data.rsdk anyway.
-stage_in=${2:-$script_dir/../build-dc}
+stage_in=${stage_arg:-$script_dir/../build-dc}
 mkdir -p -- "$stage_in"
 stage=$(cd -P -- "$stage_in" && pwd -P)
 
@@ -131,12 +158,41 @@ rm -rf -- "$stage/Data/Music" "$stage/Data/SoundFX/Global"
 cp -R -- "$src/Music"          "$stage/Data/"
 cp -R -- "$src/SoundFX/Global" "$stage/Data/SoundFX/"
 
+# Only the PNGs out of Game/, never the whole folder. The disc carries exactly
+# the converted textures under Data/Game and nothing else: a loose
+# Game/GameConfig.bin beside Data.rsdk would OVERRIDE the packed one, which is a
+# quiet way to break a disc. (The extractor does not write one by default
+# either -- belt and braces.)
+if (( ! skip_menu )); then
+  rm -rf -- "$stage/Data/Game/Menu" "$stage/Data/Game/Models"
+  for sub in Menu Models; do
+    if [[ -d "$src/Game/$sub" ]]; then
+      mkdir -p -- "$stage/Data/Game/$sub"
+      find "$src/Game/$sub" -maxdepth 1 -type f -iname '*.png' \
+        -exec cp -- {} "$stage/Data/Game/$sub/" \;
+    fi
+  done
+fi
+
 printf -- '-- converting music\n'
 "$script_dir/music_step_1_ogg_to_pcm.sh"    "$stage/Data"
 "$script_dir/music_step_2_rename_to_ogg.sh" "$stage/Data"
 
 printf -- '-- converting global sound effects\n'
 "$script_dir/sfx_step_1_global_to_raw.sh"   "$stage/Data"
+
+if (( skip_menu )); then
+  printf -- '-- 2013 menu textures skipped\n'
+elif [[ ! -d "$stage/Data/Game/Menu" ]]; then
+  printf -- '-- no Game/Menu came out of the source, nothing to convert\n'
+else
+  printf -- '-- converting 2013 menu textures\n'
+  if (( menu_vq )); then
+    "$script_dir/menu_step_1_dtex.sh" "$stage/Data"
+  else
+    "$script_dir/menu_step_1_dtex.sh" "$stage/Data" --no-vq
+  fi
+fi
 
 # The source tree is what makes the size check possible -- bytes must equal
 # rate * channels * source duration -- so verify before the temp dir goes.

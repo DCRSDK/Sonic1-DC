@@ -67,3 +67,5 @@ Sonic the Hedgehog (C) SEGA
 Original RSDK author: Christian "Taxman" Whitehead
 
 Decompilation authors: Rubberduckycooly and st×tic
+
+# **SUPPORT THE OFFICIAL RELEASE**

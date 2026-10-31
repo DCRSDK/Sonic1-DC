@@ -51,7 +51,7 @@ console output without putting game data on the link.
 + The end credits music runs out before the sequence finishes. The credits are frame-timed while the music is wall-clock, so eighteen stage loads stretch a 128s sequence to around 156s against a 121s track. Ending.ogg is chained onto Credits.ogg to cover the final demo; the last screens still play out quiet.
 + Anything else I may have missed or overlooked in testing (you tell me)
 
-Dev menu is enabled by default and is accessed by pressing the Y button. When selecting stages in the Dev menu press Start button for regular play, or the A button for debug mode. You can turn off Dev menu by toggling it off in the settings.ini and including it at the root of the disc when you go to build your CDI.
+Dev menu is NOT enabled by default. . You can access the Dev menu by by placing a settings.ini with it toggled to ON from the PC decompilation (delete all section other than the topmost with the Dev menu flag) at the root of the disc when you go to build your CDI. It is accessed by pressing the Y button. When selecting stages in the Dev menu press Start button for regular play, or the A button for debug mode
 
 **Special Thanks**
 + Rubberduckycooly & everyone involved with the RSDKv4 decompilation - without that none of this would have been possible

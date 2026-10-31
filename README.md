@@ -45,7 +45,7 @@ console output without putting game data on the link.
 + Music and sound effects streamed as raw PCM (no Vorbis decoding on-console)
 
 **What doesn't work:**
-+ 2P VS and anything else needing networking — disabled
++ Anything needing networking — disabled
 + Mod loader — disabled
 + Leaderboard uploads (local scores are kept, there is nowhere to send them)
 + The end credits music runs out before the sequence finishes. The credits are frame-timed while the music is wall-clock, so eighteen stage loads stretch a 128s sequence to around 156s against a 121s track. Ending.ogg is chained onto Credits.ogg to cover the final demo; the last screens still play out quiet.
